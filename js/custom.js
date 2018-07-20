@@ -5,7 +5,9 @@
 [Table of Contents]
 
 1. Vars and Inits
-2. Init Loaders
+2. Set Header
+3. Init Menu
+4. Init Loaders
 
 
 ******************************/
@@ -20,21 +22,98 @@ $(document).ready(function()
 
 	*/
 
+	var header = $('.header');
+	var menu = $('.menu');
+	var burger = $('.hamburger');
+	var menuActive = false;
 	var ctrl = new ScrollMagic.Controller();
+
+	setHeader();
 
 	$(window).on('resize', function()
 	{
+		setHeader();
+
+		if(window.innerWidth > 1280)
+		{
+			if(menuActive)
+			{
+				closeMenu();
+			}
+		}
 		setTimeout(function()
 		{
 			jQuery(".main_content_scroll").mCustomScrollbar("update");
 		}, 375);
 	});
 
+	$(document).on('scroll', function()
+	{
+		setHeader();
+	});
+
+	initMenu();
 	initLoaders();
 
 	/* 
 
-	2. Init Loaders
+	2. Set Header
+
+	*/
+
+	function setHeader()
+	{
+		if($(window).scrollTop() > 91)
+		{
+			header.addClass('scrolled');
+		}
+		else
+		{
+			header.removeClass('scrolled');
+		}
+	}
+
+	/* 
+
+	3. Init Menu
+
+	*/
+
+	function initMenu()
+	{
+		if($('.hamburger').length && $('.menu').length)
+		{
+			var hamb = $('.hamburger');
+
+			hamb.on('click', function()
+			{
+				if(!menuActive)
+				{
+					openMenu();
+				}
+				else
+				{
+					closeMenu();
+				}
+			});
+		}
+	}
+
+	function openMenu()
+	{
+		menu.addClass('active');
+		menuActive = true;
+	}
+
+	function closeMenu()
+	{
+		menu.removeClass('active');
+		menuActive = false;
+	}
+
+	/* 
+
+	4. Init Loaders
 
 	*/
 

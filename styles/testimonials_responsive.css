@@ -34,11 +34,6 @@
 		bottom: -80px;
 		z-index: 10;
 	}
-	.loader_container
-	{
-		width: 50%;
-		margin-bottom: 60px;
-	}
 }
 
 /************
@@ -137,6 +132,10 @@
 	{
 		font-size: 24px;
 	}
+	.main_content_scroll
+	{
+		padding-right: 30px;
+	}
 }
 
 /************
@@ -166,6 +165,10 @@
 	.general_info_content
 	{
 		padding-left: 50px;
+	}
+	.main_content_scroll
+	{
+		padding-bottom: 60px;
 	}
 }
 
@@ -230,9 +233,19 @@
 	{
 		font-size: 24px;
 	}
-	.loader_container
+	.main_content_scroll
 	{
-		width: 100%;
+		padding-right: 0px;
+	}
+	.exp_time
+	{
+		width: auto;
+		text-align: left;
+	}
+	.exp_content
+	{
+		padding-left: 0px;
+		margin-top: 45px;
 	}
 }
 
@@ -292,7 +305,7 @@
 	.main_content
 	{
 		padding-left: 30px;
-		padding-right: 30px;
+		padding-right: 0px;
 	}
 	.main_content_scroll
 	{
@@ -309,10 +322,6 @@
 	.main_subtitle
 	{
 		font-size: 18px;
-	}
-	.about_title
-	{
-		font-size: 24px;
 	}
 }
 
